@@ -1,0 +1,291 @@
+/************************ GENERAL **************************/
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  color: #5a5a5a;
+}
+ul{
+  list-style: none;
+}
+a {
+  color: #999;
+  outline: none !important;
+}
+a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+p {
+  font-style: italic;
+}
+h1{
+  font-weight: lighter;
+}
+
+/************************* BUTTON *************************/
+
+.btn{
+  border-radius: 0px !important;
+}
+
+.navbar .btn {
+  margin: 0.3rem;
+}
+
+.btn-sm{
+  font-size: 0.7rem;
+}
+
+.btn:hover{
+  border-color: #fff;
+  color: #fff !important;
+  transition: 0.3s;
+}
+
+.navbar {
+  font-family: Montserrat, sans-serif; 
+  font-size: 0.8rem; 
+  background-color: #2d2d30;
+  text-transform: uppercase !important;
+  letter-spacing: 4px;
+  opacity: 0.9;
+  padding: 5px 15px;
+  margin: 0px;
+}
+
+/************************ LOGO **************************/
+
+.logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.logo img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.logo-a {
+  display: inline-block;
+  color: red;
+  width: 13px;
+  font-weight: bolder;
+  transform: rotateZ(180deg);
+}
+
+/************************ CAROUSEL **************************/
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 38rem;
+  background-color: #777;
+}
+
+.carousel-control-next:hover{
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(0,0,0,0.75) 100%);
+  transition: all 0.3s;
+}
+
+.carousel-control-prev:hover{
+  background: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,0,0,0.75) 100%);
+  transition: all 0.3s;
+}
+
+/*********************** SLIDER ***************************/
+
+.slider{
+  min-width: 100%;
+  height: 100%;
+  filter: grayscale(80%); 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.first-slide{
+  background-image: url(../img/carousel_1.jpg);
+}
+
+.second-slide{
+  background-image: url(../img/carousel_2_2.jpg); 
+}
+
+.third-slide{
+  background-image: url(../img/carousel_3_2.jpg); 
+}
+
+/*********************** TEAM ***************************/
+
+.team h2{
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.team img {
+  filter: grayscale(90%); 
+
+}
+
+.team img:hover {
+  filter: grayscale(0%); 
+  transition: 0.3s;
+}
+
+/*********************** OTHER ***************************/
+
+.featurette-divider {
+  margin: 5rem 0; 
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+.backtt{
+  margin: 0px;
+}
+
+.backtt:hover {
+  background-color: #2d2d30;
+  border-color: #2d2d30;
+}
+
+#googleMap {
+  width: 100%;
+  height: 400px;
+  filter: grayscale(100%);
+} 
+
+/*********************** LOGIN PAGE ***************************/
+
+.form-control{
+  border-radius: 0px ;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  padding: 15px 0px;
+  margin: 15px 0px;
+  font-size: 1.1rem;
+}
+
+.form-control:hover{
+  border-color: #999;
+}
+
+.form-control:focus{
+  box-shadow: none;
+}
+
+.logReg, .profile{
+  padding-top: 5rem;
+}
+
+.logReg, .main, .profile{
+  min-height: calc(100vh - 202px);
+}
+
+.forget{
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.forget:hover{
+  color: #555;
+}
+
+
+/*********************** PROFILE ***************************/
+
+.profile-img img{
+  width: 250px;
+  border-radius: 10%;
+  filter: opacity(1);
+  box-shadow: 0px 0px 37px 0px rgba(0,0,0,0.75);
+  margin-bottom: 10px;
+}
+
+.profile-img img:hover{
+  filter: opacity(0.8);
+  transition: 0.4s;
+}
+
+.profile-img i{
+  z-index: 10;
+  position: relative;
+  left: -240px;
+  top: -90px;
+}
+
+.modal-content{
+  border-radius: 0px;
+}
+
+.modal-body{
+  padding: 0px;
+}
+
+.modal-body img{
+  width: 100%
+}
+
+.profile .col-lg-3, .col-lg-4, .col-md-5{
+  margin: 1rem 0px;
+}
+
+.left-naw .nav-link{
+  text-align: left;
+}
+
+.left-naw .nav-link:hover{
+  color: #333 !important;
+}
+
+footer{
+  font-family: Montserrat, sans-serif; 
+  background-color: #2d2d30;
+  padding: 1.3rem;
+  padding-bottom: .8rem;
+}
+
+/*********************** RESPONSIVE ***************************/
+
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+
+
