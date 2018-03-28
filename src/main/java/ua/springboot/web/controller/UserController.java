@@ -24,36 +24,39 @@ import ua.springboot.web.service.utils.CustomFileUtils;
 public class UserController {
     
     @Autowired
-    private UserService userServuce;
+    private UserService userService;
     
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public String showProfile(Model model, Principal principal) throws IOException{
-	UserEntity entity = userServuce.findUserByEmail(principal.getName());
+	UserEntity entity = userService.findUserByEmail(principal.getName());
 	entity.setImagePath(CustomFileUtils.getImage("user_" + entity.getId(), entity.getImagePath()));
-	
+	ImageRequest request = new ImageRequest();
+	model.addAttribute("uploadImageModel", request);
 	model.addAttribute("userProfile", UserMapper.entityToUserProfile(entity));
 	return "user/profile";
     }
     
-//    @GetMapping("/profile")
-//    public String uploadImage(Model model){
-//	model.addAttribute("uploadImage", new ImageRequest());
-//	return "user/profile";
-//    }
-//    
-//    @PostMapping("/profile")
-//    private String saveImage(@ModelAttribute ("uploadImage") ImageRequest request, Principal principal) throws IOException{
-//	UserEntity entity = userServuce.findUserByEmail(principal.getName());
+    
+    @PostMapping("/profile/image")
+    private String saveImage(@ModelAttribute ("uploadImageModel") ImageRequest request, Principal principal) throws IOException{
+//    	System.out.println("Req: " + request.getFile().getOriginalFilename());
+//    	System.out.println("User: " + principal.getName());
+//    	String email = principal.getName();
+//    	System.out.println(email);
+    	System.out.println(" | User2: " + userService.findUserByEmail("sdfds@gmail.ocm"));
+//	UserEntity entity = userService.findUserByEmail(principal.getName());
 //	entity.setImagePath(request.getFile().getOriginalFilename());
+//	CustomFileUtils.createFolder("user_" + entity.getId());
 //	CustomFileUtils.createImage("user_" + entity.getId(), request.getFile());
-//	
-//	return "redirect:/user";
-//    }
+	
+	return "redirect:/user";
+    }
     
     @GetMapping("/edit")
     public String editUserProfile(Model model, Principal principal){
-	UserEntity entity = userServuce.findUserByEmail(principal.getName());
+	UserEntity entity = userService.findUserByEmail(principal.getName());
+	System.out.println(entity.getEmail());
 	model.addAttribute("userProfile", UserMapper.entityToUserProfile(entity));
 	return "user/edit";
     }
